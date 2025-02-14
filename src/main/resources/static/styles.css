@@ -1,0 +1,108 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+
+header {
+    background-color: #007BFF;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+li {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #007BFF;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+li:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilo para a lista de jogos */
+.game-item {
+    list-style: none;
+    margin: 10px 0;
+    padding: 15px;
+    background-color: white; 
+    color: #007BFF;
+    border-radius: 8px;
+    position: relative;
+    transition: transform 0.2s;
+    cursor: pointer;
+    text-align: center;
+    font-size: 18px;
+}
+
+.game-item:hover {
+    transform: scale(1.05);
+}
+
+.tooltip {
+    display: none; 
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.game-container:hover .tooltip {
+    display: block; 
+}
+
+/* Estilo para o botão de mais detalhes */
+.details-button {
+    background-color: #007BFF; 
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s ease-in-out;
+}
+
+/* Efeito ao passar o mouse */
+.details-button:hover {
+    background-color: #007BFF; 
+    transform: scale(1.05); 
+}
+
+/* Efeito de clique */
+.details-button:active {
+    transform: scale(0.95);
+}

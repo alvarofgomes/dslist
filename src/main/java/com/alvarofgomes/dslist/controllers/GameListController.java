@@ -3,6 +3,7 @@ package com.alvarofgomes.dslist.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,6 +17,7 @@ import com.alvarofgomes.dslist.dto.ReplacementDTO;
 import com.alvarofgomes.dslist.services.GameListService;
 import com.alvarofgomes.dslist.services.GameService;
 
+@CrossOrigin(origins = "*")// mudança de requisiçoes
 @RestController
 @RequestMapping(value = "/lists")
 public class GameListController {
