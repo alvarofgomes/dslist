@@ -1,3 +1,4 @@
+/* Estilo global */
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f4f8;
@@ -6,7 +7,7 @@ body {
     padding: 0;
 }
 
-
+/* Cabeçalho */
 header {
     background-color: #007BFF;
     color: white;
@@ -15,94 +16,134 @@ header {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-
+/* Conteúdo principal */
 main {
     max-width: 800px;
     margin: 20px auto;
     padding: 20px;
 }
 
-ul {
-    list-style: none;
-    padding: 0;
+/* Estilo da lista de jogos */
+#game-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 15px;
+    gap: 20px;
+    padding: 20px;
 }
 
-li {
-    background-color: white;
+/* Estilo de cada jogo */
+.game-item {
+    background-color:  #007BFF;
+    color: white;
     padding: 15px;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
-    font-size: 18px;
-    font-weight: bold;
-    color: #007BFF;
     transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-li:hover {
+/* Efeito ao passar o mouse no jogo */
+.game-item:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
 
-/* Estilo para a lista de jogos */
-.game-item {
-    list-style: none;
-    margin: 10px 0;
-    padding: 15px;
-    background-color: white; 
-    color: #007BFF;
+/* Estilo da imagem do jogo */
+.game-img {
+    max-width: 300px; /* Limita o tamanho máximo */
+    width: 100%; /* Mantém responsivo dentro do limite */
+    height: auto; /* Mantém a proporção */
     border-radius: 8px;
-    position: relative;
-    transition: transform 0.2s;
-    cursor: pointer;
-    text-align: center;
+    display: block; /* Remove espaços extras */
+    margin: 10px auto; /* Centraliza a imagem */
+}
+
+/* Estilo do título */
+h2 {
     font-size: 18px;
+    margin: 10px 0;
 }
 
-.game-item:hover {
-    transform: scale(1.05);
-}
-
-.tooltip {
-    display: none; 
-    position: absolute;
-    bottom: -20px;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 5px;
-    border-radius: 4px;
-    font-size: 12px;
-    white-space: nowrap;
-}
-
-.game-container:hover .tooltip {
-    display: block; 
-}
-
-/* Estilo para o botão de mais detalhes */
-.details-button {
-    background-color: #007BFF; 
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    margin-top: 10px;
-    cursor: pointer;
+/* Estilo da descrição curta */
+.short-description {
     font-size: 14px;
-    border-radius: 5px;
-    transition: background-color 0.3s, transform 0.2s ease-in-out;
+    margin: 10px 0;
+    color: #ddd;
 }
 
-/* Efeito ao passar o mouse */
+/* Estilo para o botão de detalhes */
+.details-button {
+    color: #007BFF;
+    border: none;
+    padding: 12px 18px;
+    cursor: pointer;
+    font-size: 15px;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.2s ease-in-out;
+    font-weight: bold;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Animação do botão */
 .details-button:hover {
-    background-color: #007BFF; 
-    transform: scale(1.05); 
+    transform: scale(1.07);
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
 }
 
 /* Efeito de clique */
 .details-button:active {
     transform: scale(0.95);
+}
+
+/* Página de detalhes do jogo */
+#game-details {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #007BFF;
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* Imagem na página de detalhes */
+#game-details img {
+    width: auto;
+    max-width: 100%; /* Garante que não ultrapasse o container */
+    height: auto; /* Mantém a proporção */
+    max-height: 400px; /* Define uma altura máxima para evitar que fique gigante */
+    display: block;
+    margin: 10px auto;
+    border-radius: 10px;
+    object-fit: contain; /* Garante que a imagem seja ajustada corretamente */
+}
+
+/* Botão de voltar */
+.back-button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    cursor: pointer;
+    font-size: 15px;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.2s ease-in-out;
+    font-weight: bold;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+    display: block;
+    margin: 20px auto;
+}
+
+/* Efeito no botão de voltar */
+.back-button:hover {
+    background-color: #007BFF;
+    transform: scale(1.07);
+}
+
+/* Efeito de clique */
+.back-button:active {
+    transform: scale(0.95);
+    background-color: #007BFF;
 }

@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     async function fetchGames() {
         try {
-            const response = await fetch("http://localhost:8080/games");
+            const response = await fetch("http://localhost:8080/games"); // API do backend
             if (!response.ok) {
                 throw new Error("Erro ao buscar os jogos");
             }
@@ -15,18 +15,20 @@ document.addEventListener("DOMContentLoaded", () => {
                 const li = document.createElement("li");
                 li.classList.add("game-item");
 
-                // Criando um container para o nome do jogo
-                const gameContainer = document.createElement("div");
-                gameContainer.classList.add("game-container");
+                // Criando a imagem do jogo
+                const img = document.createElement("img");
+                img.src = game.imgUrl;
+                img.alt = game.title;
+                img.classList.add("game-img");
 
-                // Criando o nome do jogo
-                const title = document.createElement("p");
+                // Criando o título do jogo
+                const title = document.createElement("h2");
                 title.textContent = game.title;
 
-                // Criando o tooltip com gênero e ano
-                const tooltip = document.createElement("span");
-                tooltip.classList.add("tooltip");
-                tooltip.textContent = `${game.genre} - ${game.year}`;
+                // Criando a descrição curta
+                const shortDescription = document.createElement("p");
+                shortDescription.textContent = game.shortDescription;
+                shortDescription.classList.add("short-description");
 
                 // Criando o botão de mais detalhes
                 const detailsButton = document.createElement("button");
@@ -36,11 +38,11 @@ document.addEventListener("DOMContentLoaded", () => {
                     window.location.href = `game.html?id=${game.id}`;
                 };
 
-                // Adicionando elementos na estrutura
-                gameContainer.appendChild(title);
-                gameContainer.appendChild(tooltip);
-                gameContainer.appendChild(detailsButton);
-                li.appendChild(gameContainer);
+                // Adicionando os elementos ao item da lista
+                li.appendChild(img);
+                li.appendChild(title);
+                li.appendChild(shortDescription);
+                li.appendChild(detailsButton);
                 gameListElement.appendChild(li);
             });
         } catch (error) {
@@ -51,4 +53,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
     fetchGames();
 });
-
