@@ -54,10 +54,14 @@ Não precisa configurar banco de dados — o perfil padrão é `test`, que usa H
 - API: http://localhost:8080/games
 - Console H2: http://localhost:8080/h2-console (JDBC URL `jdbc:h2:mem:testdb`, usuário `sa`, sem senha)
 
-Para rodar contra PostgreSQL local, use o perfil `dev` (ajuste `application-dev.properties` com suas credenciais):
+Para rodar contra PostgreSQL local, copie `application-dev.properties.example` para `application-dev.properties`, ajuste com suas credenciais, e use o perfil `dev`:
 
 ```bash
 APP_PROFILE=dev ./mvnw spring-boot:run
 ```
 
-Em produção (perfil `prod`), a conexão é lida das variáveis de ambiente `DB_URL`, `DB_USERNAME` e `DB_PASSWORD`.
+## Deploy em produção
+
+O perfil `prod` lê a conexão das variáveis de ambiente `DB_URL`, `DB_USERNAME` e `DB_PASSWORD`, e as origens liberadas para CORS da variável `CORS_ORIGINS` (lista separada por vírgula).
+
+Como `ddl-auto=none`, o schema não é criado automaticamente: antes do primeiro deploy, rode [`db/schema.sql`](db/schema.sql) manualmente no banco de produção.
