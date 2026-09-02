@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     async function fetchGames() {
         try {
-            const response = await fetch("http://localhost:8080/games");
+            const response = await fetch("/games");
             if (!response.ok) {
                 throw new Error("Erro ao buscar os jogos");
             }
@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Função para mover um jogo na lista
     async function moveGame(listId, sourceIndex, destinationIndex) {
         try {
-            const response = await fetch(`http://localhost:8080/lists/${listId}/replacement`, {
+            const response = await fetch(`/lists/${listId}/replacement`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

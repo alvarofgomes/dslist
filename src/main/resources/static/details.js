@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     try {
-        const response = await fetch(`http://localhost:8080/games/${gameId}`);
+        const response = await fetch(`/games/${gameId}`);
         if (!response.ok) {
             throw new Error("Erro ao buscar detalhes do jogo");
         }
